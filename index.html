@@ -148,13 +148,11 @@
       let generatedCount = 0;
       let generated = '';
       while(generatedCount < charCount) {
-        console.log(generatedCount);
         var randomIndex =  Math.floor(Math.random() * Math.floor(totalIpsums));
         let word = ipsum[randomIndex];
 
         if (word.length + generatedCount + 1 <=charCount) {
           generatedCount += word.length + 1;
-          console.log('generatedCount', generatedCount);
           generated = generated + ' ' + word;
         } else {
           var newSize = charCount - generatedCount;
@@ -162,8 +160,6 @@
           generatedCount += newSize;
           generated += ' ' + newWord;
         }
-        console.log('generated', generated);
-        console.log('generated', generatedCount);
       }
       $('#word-container').text(generated);
     }
